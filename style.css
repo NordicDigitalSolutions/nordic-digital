@@ -8,14 +8,13 @@ html {
 
 body {
     margin: 0;
-    font-family: Inter, Arial, sans-serif;
+    font-family: Arial, sans-serif;
     background: #020617;
     color: white;
     line-height: 1.6;
     overflow-x: hidden;
 }
 
-/* BACKGROUND */
 .bg {
     position: fixed;
     inset: 0;
@@ -52,12 +51,7 @@ body {
 .scanline {
     position: absolute;
     inset: 0;
-    background: linear-gradient(
-        to bottom,
-        transparent,
-        rgba(56,189,248,0.08),
-        transparent
-    );
+    background: linear-gradient(to bottom, transparent, rgba(56,189,248,0.08), transparent);
     height: 260px;
     animation: scan 8s linear infinite;
 }
@@ -102,6 +96,7 @@ body {
     from {
         transform: translateY(-300px);
     }
+
     to {
         transform: translateY(110vh);
     }
@@ -113,18 +108,15 @@ body {
     }
 }
 
-/* NAVBAR */
 .navbar {
     position: sticky;
     top: 0;
     z-index: 999;
     height: 82px;
     padding: 0 70px;
-
     display: flex;
     justify-content: space-between;
     align-items: center;
-
     background: rgba(2, 6, 23, 0.72);
     backdrop-filter: blur(22px);
     border-bottom: 1px solid rgba(255,255,255,0.09);
@@ -137,13 +129,14 @@ body {
     color: white;
     text-decoration: none;
     font-size: 22px;
-    font-weight: 950;
+    font-weight: 900;
 }
 
 .brand img {
     width: 50px;
     height: 50px;
     border-radius: 14px;
+    object-fit: cover;
     box-shadow: 0 0 30px rgba(56,189,248,0.25);
 }
 
@@ -172,23 +165,19 @@ body {
     border: 1px solid rgba(56,189,248,0.35);
 }
 
-/* HERO */
 .hero {
     min-height: calc(100vh - 82px);
     padding: 90px 24px 70px;
-
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-
     text-align: center;
 }
 
 .hero-badge {
     padding: 10px 18px;
     margin-bottom: 28px;
-
     border-radius: 999px;
     border: 1px solid rgba(56,189,248,0.35);
     background: rgba(15, 23, 42, 0.65);
@@ -204,12 +193,9 @@ body {
     max-width: 92%;
     border-radius: 34px;
     margin-bottom: 34px;
-
     box-shadow:
         0 45px 120px rgba(0,0,0,0.6),
-        0 0 95px rgba(56,189,248,0.32),
-        inset 0 0 30px rgba(255,255,255,0.08);
-
+        0 0 95px rgba(56,189,248,0.32);
     animation: logoPulse 4.5s ease-in-out infinite;
 }
 
@@ -225,17 +211,14 @@ body {
 .hero h1 {
     max-width: 1120px;
     margin: 0 auto 28px;
-
     font-size: clamp(48px, 8vw, 104px);
     line-height: 0.92;
     letter-spacing: -5px;
-    font-weight: 950;
-
+    font-weight: 900;
     background: linear-gradient(90deg, #ffffff, #dbeafe, #38bdf8, #a78bfa, #ffffff);
     background-size: 250%;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-
     animation: shimmer 8s linear infinite;
 }
 
@@ -265,14 +248,10 @@ body {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-
     padding: 17px 34px;
     border-radius: 18px;
-
     text-decoration: none;
-    font-weight: 950;
-    letter-spacing: -0.2px;
-
+    font-weight: 900;
     transition: 0.25s;
     overflow: hidden;
 }
@@ -323,7 +302,6 @@ body {
     border: 1px solid rgba(255,255,255,0.1);
 }
 
-/* GLOBAL SECTIONS */
 section {
     max-width: 1240px;
     margin: 0 auto;
@@ -334,7 +312,7 @@ section {
     color: #38bdf8;
     text-transform: uppercase;
     letter-spacing: 2.4px;
-    font-weight: 950;
+    font-weight: 900;
     font-size: 14px;
     margin-bottom: 12px;
 }
@@ -353,11 +331,9 @@ section h2 {
     max-width: 680px;
 }
 
-/* METRICS */
 .metrics {
     max-width: 1050px;
     padding: 38px 24px;
-
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 22px;
@@ -383,7 +359,6 @@ section h2 {
     color: #cbd5e1;
 }
 
-/* CARDS */
 .cards,
 .pricing,
 .steps {
@@ -411,31 +386,14 @@ section h2 {
     position: relative;
     padding: 34px;
     border-radius: 32px;
-
     background: linear-gradient(180deg, rgba(15,23,42,0.82), rgba(15,23,42,0.56));
     border: 1px solid rgba(255,255,255,0.11);
     backdrop-filter: blur(18px);
-
     box-shadow:
         0 30px 80px rgba(0,0,0,0.32),
         inset 0 1px 0 rgba(255,255,255,0.08);
-
     transition: 0.25s;
     overflow: hidden;
-}
-
-.card::before,
-.price-card::before,
-.step::before,
-.before::before,
-.after::before {
-    content: "";
-    position: absolute;
-    inset: -1px;
-    background: linear-gradient(135deg, rgba(56,189,248,0.0), rgba(56,189,248,0.18), rgba(168,85,247,0.12));
-    opacity: 0;
-    transition: 0.25s;
-    pointer-events: none;
 }
 
 .card:hover,
@@ -450,14 +408,6 @@ section h2 {
         0 0 70px rgba(56,189,248,0.12);
 }
 
-.card:hover::before,
-.price-card:hover::before,
-.step:hover::before,
-.before:hover::before,
-.after:hover::before {
-    opacity: 1;
-}
-
 .card.premium {
     background:
         radial-gradient(circle at top right, rgba(56,189,248,0.2), transparent 38%),
@@ -467,13 +417,10 @@ section h2 {
 .icon {
     width: 62px;
     height: 62px;
-
     display: grid;
     place-items: center;
-
     border-radius: 20px;
     margin-bottom: 22px;
-
     font-size: 32px;
     background: rgba(56,189,248,0.12);
     border: 1px solid rgba(56,189,248,0.22);
@@ -493,11 +440,11 @@ section h2 {
 .price-card li,
 .step p,
 .before p,
-.after p {
+.after p,
+.price-card p {
     color: #cbd5e1;
 }
 
-/* SPLIT */
 .split {
     display: grid;
     grid-template-columns: 0.9fr 1.1fr;
@@ -529,11 +476,10 @@ section h2 {
     display: inline-block;
     margin-bottom: 16px;
     color: #38bdf8;
-    font-weight: 950;
+    font-weight: 900;
     font-size: 28px;
 }
 
-/* PRICING */
 .price-card {
     min-height: 440px;
 }
@@ -546,7 +492,7 @@ section h2 {
 .price {
     font-size: 38px;
     color: #38bdf8;
-    font-weight: 950;
+    font-weight: 900;
     margin: 10px 0 18px;
 }
 
@@ -562,22 +508,18 @@ section h2 {
     position: absolute;
     top: 20px;
     right: 20px;
-
     padding: 7px 13px;
     border-radius: 999px;
-
     color: #020617;
     background: linear-gradient(135deg, #38bdf8, #a78bfa);
-
     font-size: 13px;
-    font-weight: 950;
+    font-weight: 900;
 }
 
 .small-card {
     min-height: 300px;
 }
 
-/* SHOWCASE */
 .showcase {
     max-width: 1180px;
 }
@@ -586,11 +528,9 @@ section h2 {
     padding: 80px;
     border-radius: 42px;
     text-align: center;
-
     background:
         radial-gradient(circle at top, rgba(56,189,248,0.28), transparent 34%),
         linear-gradient(135deg, rgba(56,189,248,0.14), rgba(124,58,237,0.12));
-
     border: 1px solid rgba(255,255,255,0.13);
     box-shadow: 0 45px 120px rgba(0,0,0,0.45);
     backdrop-filter: blur(18px);
@@ -608,7 +548,6 @@ section h2 {
     font-size: 21px;
 }
 
-/* CONTACT */
 .contact-form {
     max-width: 650px;
     display: flex;
@@ -621,11 +560,9 @@ section h2 {
     width: 100%;
     padding: 20px;
     border-radius: 20px;
-
     border: 1px solid rgba(255,255,255,0.13);
     background: rgba(15,23,42,0.74);
     color: white;
-
     font-size: 16px;
     outline: none;
     backdrop-filter: blur(16px);
@@ -646,13 +583,10 @@ section h2 {
     padding: 20px;
     border: none;
     border-radius: 20px;
-
     color: #020617;
     background: linear-gradient(135deg, #38bdf8, #a78bfa);
-
-    font-weight: 950;
+    font-weight: 900;
     font-size: 16px;
-
     cursor: pointer;
     transition: 0.25s;
 }
@@ -662,7 +596,6 @@ section h2 {
     background: white;
 }
 
-/* FOOTER */
 footer {
     padding: 55px 20px;
     text-align: center;
@@ -671,7 +604,6 @@ footer {
     background: rgba(2,6,23,0.8);
 }
 
-/* MOBILE */
 @media (max-width: 950px) {
     .navbar {
         height: auto;
